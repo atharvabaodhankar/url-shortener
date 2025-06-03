@@ -1,6 +1,8 @@
 import Url from '../models/Url.js';
 import { nanoid } from 'nanoid';
 
+const BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
+
 export const shortenUrl = async (req, res) => {
   const { originalUrl } = req.body;
 
@@ -11,7 +13,6 @@ export const shortenUrl = async (req, res) => {
   let shortId;
   let exists = true;
 
-  // Keep generating until a unique shortId is found
   while (exists) {
     shortId = nanoid(6);
     const existing = await Url.findOne({ shortId });
@@ -22,7 +23,7 @@ export const shortenUrl = async (req, res) => {
 
   try {
     const newUrl = await Url.create({ originalUrl, shortId });
-    res.json({ shortUrl: `http://localhost:3000/${shortId}` });
+    res.json({ shortUrl: `${BASE_URL}/${shortId}` });
   } catch (err) {
     res.status(500).json({ error: 'Server error' });
   }
