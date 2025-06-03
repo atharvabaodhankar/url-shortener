@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { shortenUrl } from './api';
+import './App.css';
 
 
 import './App.css';
@@ -71,6 +72,9 @@ function App() {
           </div>
         )}
       </div>
+      <footer className="footer">
+        Made with <span className="heart">🤍</span> by Atharva
+      </footer>
     </div>
   );
 }

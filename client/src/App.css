@@ -1,3 +1,30 @@
+/* Footer styles */
+.footer {
+  width: 100vw;
+  text-align: center;
+  padding: 1.2rem 0 1.2rem 0;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  background: transparent;
+  user-select: none;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.footer .heart {
+  color: #ff5858;
+  font-size: 1.2em;
+  margin: 0 0.2em;
+  animation: pulse 1.2s infinite alternate;
+}
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.18); }
+}
 
 /* Modern and engaging styles for the URL Shortener App */
 
